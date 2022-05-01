@@ -1,0 +1,14 @@
+<div *ngFor = "let wine of wine_list" [ngClass]="{'selected': wine.isOnSale == false }">
+    <img src="{{wine.imageUrl}}" alt="{{wine.name}}" />
+    <figcaption>
+        <h2>{{wine.name}}</h2>
+        <p>{{wine.price}}</p>
+        <select>
+            <option  *ngFor="let i of items" [value]="i" >{{i}}</option>
+        </select>
+        <button (click)="incrementCounter(counter)">+</button>
+        <span id="quantity">{{counter}}</span>
+        <button (click)="decrementCounter(counter)" *ngIf="counter>0"  >-</button>
+    </figcaption>
+
+</div>
